@@ -3186,7 +3186,7 @@ angular.module('mgcrea.ngStrap.tab', [])
       self.$panes = $scope.$panes = [];
 
       // DEPRECATED: $viewChangeListeners, please use $activePaneChangeListeners
-      // Because we deprecated ngModel usage, we rename viewChangeListeners to 
+      // Because we deprecated ngModel usage, we rename viewChangeListeners to
       // activePaneChangeListeners to make more sense.
       self.$activePaneChangeListeners = self.$viewChangeListeners = [];
 
@@ -3202,7 +3202,7 @@ angular.module('mgcrea.ngStrap.tab', [])
         self.$panes.splice(index, 1);
 
         if (index < activeIndex) {
-          // we removed a pane before the active pane, so we need to 
+          // we removed a pane before the active pane, so we need to
           // decrement the active pane index
           activeIndex--;
         }
@@ -4992,7 +4992,7 @@ angular.module('mgcrea.ngStrap.typeahead', ['mgcrea.ngStrap.tooltip', 'mgcrea.ng
         // Model rendering in view
         controller.$render = function () {
           // console.warn('$render', element.attr('ng-model'), 'controller.$modelValue', typeof controller.$modelValue, controller.$modelValue, 'controller.$viewValue', typeof controller.$viewValue, controller.$viewValue);
-          if(controller.$isEmpty(controller.$viewValue)) return element.val('');
+          if(controller.$isEmpty(controller.$viewValue)) return element.val(controller.$modelValue);
           var index = typeahead.$getIndex(controller.$modelValue);
           var selected = angular.isDefined(index) ? typeahead.$scope.$matches[index].label : controller.$viewValue;
           selected = angular.isObject(selected) ? parsedOptions.displayValue(selected) : selected;
